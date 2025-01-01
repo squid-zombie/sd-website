@@ -1,1 +1,1 @@
-# squidiablo-website
+# sd-website
