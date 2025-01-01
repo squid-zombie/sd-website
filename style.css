@@ -1,32 +1,112 @@
-/* style.css */
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #6b73ff, #000dff);
-    color: white;
+  font-family: 'Comic Sans MS', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #ff7eb3, #ffaefc);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-bottom: 5px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin: 0.5rem;
+  text-shadow: 0 0 10px #fff, 0 0 20px #f0f;
+}
+
+.header p {
+  font-size: 1.5rem;
+}
+
+/* Shapes Section */
+.shapes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.shape {
+  width: 100px;
+  height: 100px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.circle {
+  background: radial-gradient(circle, #ff7eb3, #ff9bd5);
+  border-radius: 50%;
+}
+
+.square {
+  background: linear-gradient(45deg, #ffaefc, #c27dff);
+  border-radius: 15px;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid #ff8ed4;
+}
+
+/* Content Section */
+.content {
+  text-align: center;
+  padding: 2rem;
+}
+
+.content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  color: #fff;
+  background: linear-gradient(45deg, #ff6e40, #ffa726);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  background: rgba(0, 0, 0, 0.3);
+  font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
   }
-  
-  header {
-    text-align: center;
-    padding: 2rem 0;
+  50% {
+    transform: translateY(-15px);
   }
-  
-  button {
-    display: block;
-    margin: 2rem auto;
-    padding: 0.5rem 1rem;
-    font-size: 1.2rem;
-    color: white;
-    background: #000dff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  button:hover {
-    background: #6b73ff;
-  }
-  
+}
