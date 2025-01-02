@@ -6,129 +6,50 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #141e30, #243b55);
+  font-family: 'Courier New', monospace;
+  background: linear-gradient(135deg, #1a1a1a, #333333); /* Dark grey background */
   color: #fff;
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-/* Hero Section */
-.hero {
-  text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(135deg, rgba(30, 60, 114, 0.8), rgba(42, 82, 152, 0.8));
-  backdrop-filter: blur(10px);
-  color: #fff;
-}
-
-.hero h1 {
-  font-size: 3.5rem;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
-
-.hero p {
-  font-size: 1.5rem;
-  margin-bottom: 30px;
-}
-
-.hero .button {
-  text-decoration: none;
-  background: #ff4081;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  margin: 10px;
-  font-size: 1.2rem;
-  transition: background 0.3s ease;
-}
-
-.hero .button:hover {
-  background: #f50057;
-}
-
-/* Content Section */
-.content {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #ffca28;
-}
-
-/* Grid for Gallery */
-.grid {
+  line-height: 1.8;
   display: flex;
   justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.art-piece {
-  width: 300px;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(5px);
-  border-radius: 10px;
+  align-items: center;
+  height: 100vh;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
 }
 
-.art-piece:hover {
-  transform: scale(1.05);
-}
-
-.art-piece img {
-  width: 100%;
-  border-bottom: 2px solid #ffca28;
-}
-
-.art-piece h3 {
-  padding: 10px 0;
-}
-
-/* Blog Panels */
-.blog-panel {
-  width: 90%;
-  max-width: 600px;
-  margin: 20px auto;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
+.container {
+  width: 80%;
+  max-width: 800px;
+  text-align: center;
+  border: 2px solid rgba(255, 0, 0, 0.7); /* Neon red border */
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  text-align: left;
+  padding: 20px;
+  background: rgba(50, 50, 50, 0.9); /* Slightly translucent grey */
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.8), 0 0 50px rgba(255, 0, 0, 0.4); /* Neon glow */
 }
 
-.blog-panel h3 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
+/* Headline */
+.headline {
+  font-size: 2.5rem;
+  color: #ff003c; /* Neon red */
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.6); /* Glow effect */
+  margin-bottom: 20px;
 }
 
-.blog-panel p {
-  font-size: 1rem;
-  margin-bottom: 10px;
-}
-
-.blog-panel .read-more {
-  text-decoration: none;
-  color: #ff4081;
-  font-weight: bold;
-}
-
-.blog-panel .read-more:hover {
-  color: #f50057;
+/* Story Section */
+.story p {
+  font-size: 1.2rem;
+  color: #ccc;
+  background: rgba(20, 20, 20, 0.8); /* Subtle darker background for text */
+  padding: 15px;
+  border-radius: 5px;
+  line-height: 1.6;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
 }
 
 /* Footer */
 footer {
-  text-align: center;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.8);
-  color: #fff;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #777;
 }
