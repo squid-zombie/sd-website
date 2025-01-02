@@ -53,3 +53,34 @@ footer {
   font-size: 0.9rem;
   color: #777;
 }
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .container {
+    width: 90%; /* Make the container narrower */
+    padding: 15px;
+  }
+
+  .headline {
+    font-size: 2rem; /* Smaller headline for smaller screens */
+  }
+
+  .story p {
+    font-size: 1rem; /* Adjust font size for readability */
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .headline {
+    font-size: 1.8rem; /* Further reduce headline size on very small screens */
+  }
+
+  .story p {
+    font-size: 0.9rem; /* Adjust paragraph font size */
+  }
+
+  footer {
+    font-size: 0.8rem; /* Smaller footer text */
+  }
+}
