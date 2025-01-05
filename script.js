@@ -1,6 +1,6 @@
 // Typing effect
 const textElement = document.querySelector('.glow-text');
-const text = "Welcome to the Retro Terminal...";
+const text = "Do not decode...";
 
 let index = 0;
 
