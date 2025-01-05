@@ -1,86 +1,44 @@
-/* Global Reset */
-* {
+/* Full screen terminal style */
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Courier New', monospace;
-  background: linear-gradient(135deg, #1a1a1a, #333333); /* Dark grey background */
-  color: #fff;
-  line-height: 1.8;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  overflow: hidden;
+  background-color: #000;
+  font-family: 'Courier New', Courier, monospace;
+  color: #ff0000;
 }
 
-.container {
-  width: 80%;
+.terminal {
+  width: 90%;
   max-width: 800px;
-  text-align: center;
-  border: 2px solid rgba(255, 0, 0, 0.7); /* Neon red border */
-  border-radius: 10px;
+  text-align: left;
   padding: 20px;
-  background: rgba(50, 50, 50, 0.9); /* Slightly translucent grey */
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.8), 0 0 50px rgba(255, 0, 0, 0.4); /* Neon glow */
+  border: 2px solid #ff0000;
+  background-color: #111;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
 }
 
-/* Headline */
-.headline {
-  font-size: 2.5rem;
-  color: #ff003c; /* Neon red */
-  text-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.6); /* Glow effect */
-  margin-bottom: 20px;
+/* Red glowing text effect */
+.glow-text {
+  font-size: 24px;
+  color: #ff0000;
+  text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000;
 }
 
-/* Story Section */
-.story p {
-  font-size: 1.2rem;
-  color: #ccc;
-  background: rgba(20, 20, 20, 0.8); /* Subtle darker background for text */
-  padding: 15px;
-  border-radius: 5px;
-  line-height: 1.6;
-  box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
-}
-
-/* Footer */
-footer {
-  margin-top: 20px;
-  font-size: 0.9rem;
-  color: #777;
-}
-
-/* Mobile Styles */
-@media (max-width: 768px) {
-  .container {
-    width: 90%; /* Make the container narrower */
-    padding: 15px;
-  }
-
-  .headline {
-    font-size: 2rem; /* Smaller headline for smaller screens */
-  }
-
-  .story p {
-    font-size: 1rem; /* Adjust font size for readability */
-    padding: 10px;
+/* Blinking cursor effect */
+@keyframes blink {
+  50% {
+      opacity: 0;
   }
 }
 
-@media (max-width: 480px) {
-  .headline {
-    font-size: 1.8rem; /* Further reduce headline size on very small screens */
-  }
-
-  .story p {
-    font-size: 0.9rem; /* Adjust paragraph font size */
-  }
-
-  footer {
-    font-size: 0.8rem; /* Smaller footer text */
-  }
+.terminal::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  background-color: #ff0000;
+  animation: blink 1s infinite;
 }
