@@ -28,15 +28,8 @@ function typeEffect() {
     // Pause before typing the last word
     else if (index === textWithoutLastWord.length) {
         setTimeout(() => {
-            index++;
-            typeEffect();
-        }, pauseBeforeLastWord); // Pause before starting the last word
-    } 
-    // Type the last word slower
-    else if (index < text.length) {
-        textElement.innerHTML += text.charAt(index);
-        index++;
-        setTimeout(typeEffect, slowSpeed);
+            textElement.innerHTML += `<br><span class="last-word">${lastWord}</span>`;
+        }, pauseBeforeLastWord);
     }
 }
 

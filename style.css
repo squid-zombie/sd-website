@@ -1,4 +1,4 @@
-/* Full screen terminal style */
+/* Body text styling */
 body {
   margin: 0;
   padding: 0;
@@ -21,24 +21,34 @@ body {
   box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
 }
 
-/* Red glowing text effect */
+/* Glowing text effect for body text */
 .glow-text {
   font-size: 24px;
   color: #ff0000;
   text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000;
 }
 
-/* Blinking cursor effect */
-@keyframes blink {
-  50% {
-      opacity: 0;
-  }
+/* Dramatic last word styling */
+.last-word {
+  display: block;
+  margin-top: 20px;
+  font-size: 48px;
+  text-align: center;
+  color: #ff4444;
+  font-weight: bold;
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff4444, 0 0 40px #ff0000;
+  animation: pulse 1s infinite;
 }
 
-.terminal::after {
-  content: " ";
-  display: inline-block;
-  width: 10px;
-  background-color: #ff0000;
-  animation: blink 1s infinite;
+/* Pulse effect for the last word */
+@keyframes pulse {
+  0% {
+      text-shadow: 0 0 10px #ff0000, 0 0 20px #ff4444, 0 0 40px #ff0000;
+  }
+  50% {
+      text-shadow: 0 0 20px #ff4444, 0 0 30px #ff0000, 0 0 50px #ff4444;
+  }
+  100% {
+      text-shadow: 0 0 10px #ff0000, 0 0 20px #ff4444, 0 0 40px #ff0000;
+  }
 }
