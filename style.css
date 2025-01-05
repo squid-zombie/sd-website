@@ -1,4 +1,4 @@
-/* Body text styling */
+/* Body styling */
 body {
   margin: 0;
   padding: 0;
@@ -11,6 +11,7 @@ body {
   color: #ff0000;
 }
 
+/* Terminal container */
 .terminal {
   width: 90%;
   max-width: 800px;
@@ -21,26 +22,79 @@ body {
   box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
 }
 
-/* Glowing text effect for body text */
+/* Glowing text effect */
 .glow-text {
   font-size: 24px;
   color: #ff0000;
   text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Dramatic last word styling */
-.last-word {
-  display: block;
-  margin-top: 20px;
-  font-size: 48px;
-  text-align: center;
+/* Glitch effect */
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #ff4444;
+  background: #111;
+  overflow: hidden;
+  clip-path: polygon(
+      0% 0%, 
+      100% 0%, 
+      100% 33%, 
+      0% 33%
+  );
+  animation: glitch 1s infinite;
+}
+
+.glitch::after {
+  color: #ff9999;
+  clip-path: polygon(
+      0% 66%, 
+      100% 66%, 
+      100% 100%, 
+      0% 100%
+  );
+}
+
+/* Keyframe animation for glitch effect */
+@keyframes glitch {
+  0% {
+      transform: translate(0, 0);
+  }
+  20% {
+      transform: translate(-2px, 2px);
+  }
+  40% {
+      transform: translate(2px, -2px);
+  }
+  60% {
+      transform: translate(-2px, 2px);
+  }
+  80% {
+      transform: translate(2px, -2px);
+  }
+  100% {
+      transform: translate(0, 0);
+  }
+}
+
+/* Styling for the final text (ACCESS DENIED) */
+.final-text {
+  display: inline-block;
+  font-size: 36px;
   color: #ff4444;
   font-weight: bold;
   text-shadow: 0 0 10px #ff0000, 0 0 20px #ff4444, 0 0 40px #ff0000;
-  animation: pulse 1s infinite;
+  animation: pulse 1.5s infinite;
 }
 
-/* Pulse effect for the last word */
+/* Pulse effect for final text */
 @keyframes pulse {
   0% {
       text-shadow: 0 0 10px #ff0000, 0 0 20px #ff4444, 0 0 40px #ff0000;

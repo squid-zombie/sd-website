@@ -1,39 +1,51 @@
-// Select the HTML element with the class 'glow-text'
-const textElement = document.querySelector('.glow-text');
+// Select terminal text element
+const textElement = document.getElementById('terminal-text');
 
-// Define the text to animate
-const text = "Welcome to the Retro Terminal. Access Granted";
+// Define text to type
+const text = "VERMILLION Protocol Initiated.";
+const finalText = "ACCESS DENIED";
 
-// Typing speeds
-const normalSpeed = 100;   // Speed for most of the text
-const slowSpeed = 300;     // Speed for the last word
-const pauseBeforeLastWord = 1000; // Pause before typing the last word (in milliseconds)
+// Typing speed
+const normalSpeed = 100;
 
-// Counter to track which character we're currently typing
+// Typing effect
 let index = 0;
-
-// Split the text into words to identify the last word
-const words = text.split(" ");
-const lastWord = words[words.length - 1];
-const textWithoutLastWord = text.slice(0, text.lastIndexOf(lastWord));
-
-// Function to perform the typing effect
 function typeEffect() {
-    // Type the text up to the last word at normal speed
-    if (index < textWithoutLastWord.length) {
-        textElement.innerHTML += textWithoutLastWord.charAt(index);
+    if (index < text.length) {
+        textElement.innerHTML += text.charAt(index);
         index++;
         setTimeout(typeEffect, normalSpeed);
-    } 
-    // Pause before typing the last word
-    else if (index === textWithoutLastWord.length) {
-        setTimeout(() => {
-            textElement.innerHTML += `<br><span class="last-word">${lastWord}</span>`;
-        }, pauseBeforeLastWord);
+    } else {
+        textElement.innerHTML += `<br><span class="final-text">${finalText}</span>`;
     }
 }
 
-// Start the typing effect once the DOM is loaded
+// Start typing on DOM load
 document.addEventListener('DOMContentLoaded', () => {
     typeEffect();
 });
+
+// Cursor trail effect
+const cursorTrail = document.createElement('div');
+cursorTrail.classList.add('cursor-trail');
+document.body.appendChild(cursorTrail);
+
+document.addEventListener('mousemove', (e) => {
+    cursorTrail.style.left = `${e.pageX}px`;
+    cursorTrail.style.top = `${e.pageY}px`;
+    cursorTrail.style.opacity = '1';
+
+    setTimeout(() => {
+        cursorTrail.style.opacity = '0';
+    }, 500);
+});
+
+// Random glitch effect
+function glitchEffect() {
+    const glitchOverlay = document.querySelector('.glitch-overlay');
+    setInterval(() => {
+        glitchOverlay.style.opacity = Math.random() > 0.5 ? '0.2' : '0';
+    }, Math.random() * 500 + 200);
+}
+
+glitchEffect();
